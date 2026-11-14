@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Аналоги и пробел на рынке</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#3A22D6}a:hover{color:#24138F}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1080px; box-sizing: border-box; padding: 56px 64px; background: #FFFFFF; color: #12121A; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3A22D6">Track 03 · Skills · US 25–45</div>
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 44px; line-height: 1.05; font-weight: 700">Кто уже учит по книгам — и чего никто не делает</h1>
+    </div>
+    <div style="font-size: 14px; color: #4A4A57; max-width: 380px; line-height: 1.45">Данные из открытых источников, ноябрь 2026. Цены — базовые тарифы для США, бывают промо.</div>
+  </div>
+
+  <div style="border: 1px solid #E3E3EA; border-radius: 14px; overflow: hidden">
+    <div style="display: grid; grid-template-columns: 150px 170px 190px 160px 140px 160px 150px minmax(0, 1fr); background: #F4F4F8; font-size: 12px; font-weight: 600; color: #4A4A57; text-transform: uppercase; letter-spacing: 0.04em">
+      <div style="padding: 14px 16px">Сервис</div>
+      <div style="padding: 14px 12px">Единица обучения</div>
+      <div style="padding: 14px 12px">Синтез из многих книг</div>
+      <div style="padding: 14px 12px">Ссылка на источник</div>
+      <div style="padding: 14px 12px">Аудио</div>
+      <div style="padding: 14px 12px">Голосовой тьютор</div>
+      <div style="padding: 14px 12px">Платформа</div>
+      <div style="padding: 14px 16px">Цена</div>
+    </div>
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+      <div style="display: grid; grid-template-columns: 150px 170px 190px 160px 140px 160px 150px minmax(0, 1fr); border-top: 1px solid #E3E3EA; font-size: 14px; line-height: 1.35; background: {{r.bg}}">
+        <div style="padding: 14px 16px; font-weight: 700; color: {{r.nameColor}}">{{r.name}}</div>
+        <div style="padding: 14px 12px">{{r.unit}}</div>
+        <div style="padding: 14px 12px">{{r.synth}}</div>
+        <div style="padding: 14px 12px">{{r.cite}}</div>
+        <div style="padding: 14px 12px">{{r.audio}}</div>
+        <div style="padding: 14px 12px">{{r.tutor}}</div>
+        <div style="padding: 14px 12px; color: #4A4A57">{{r.platform}}</div>
+        <div style="padding: 14px 16px; color: #4A4A57">{{r.price}}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="font-size: 13px; color: #4A4A57; margin-top: -14px">● есть &nbsp;&nbsp; ◐ частично &nbsp;&nbsp; ○ нет</div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+    <div style="background: #F4F4F8; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Рынок мыслит книгами</div>
+      <div style="font-size: 14px; line-height: 1.5; color: #33333D">Blinkist, Headway, Shortform продают пересказ одной книги. «Темы» у них — плейлисты из таких пересказов, а не единый курс.</div>
+    </div>
+    <div style="background: #F4F4F8; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Источник теряется</div>
+      <div style="font-size: 14px; line-height: 1.5; color: #33333D">По главам разбирает только Shortform — и только одну книгу. Связи «мысль → книга → глава» внутри курса нет ни у кого.</div>
+    </div>
+    <div style="background: #F4F4F8; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Голос — пока эксперимент</div>
+      <div style="font-size: 14px; line-height: 1.5; color: #33333D">Разговор с AI-ведущими есть в NotebookLM, но только по вашим файлам и только на английском. Готовой программы там нет.</div>
+    </div>
+    <div style="background: #3A22D6; color: #FFFFFF; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700">Главный риск — BeFreed</div>
+      <div style="font-size: 14px; line-height: 1.5">Уже делает персональные AI-аудиоуроки из нескольких источников. Наше отличие: ссылки до главы, курс с результатом, работа в браузере.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const base = { bg: '#FFFFFF', nameColor: '#12121A' };
+    const rows = [
+      { name: 'Blinkist', unit: '1 книга, ~15 мин', synth: '◐ Guides — подборки', cite: '○ книга целиком', audio: '● все тайтлы', tutor: '○ (AI для внешних текстов в Pro)', platform: 'iOS, Android, web', price: '$99.99/год · Pro $174.99' },
+      { name: 'Headway', unit: '1 книга, 15 мин', synth: '◐ AI-пути обучения', cite: '○ книга целиком', audio: '● текст + аудио', tutor: '○', platform: 'iOS, Android', price: '$12.99/мес · $89.99/год' },
+      { name: 'Shortform', unit: '1 книга, гайд по главам', synth: '◐ связи между книгами в комментариях', cite: '● по главам', audio: '● озвучка', tutor: '○', platform: 'web, iOS, Android', price: '$24/мес · $197/год' },
+      { name: 'Imprint', unit: 'визуальный курс', synth: '◐ Learning Paths', cite: '○ книга целиком', audio: '○ визуальный формат', tutor: '○', platform: 'iOS, Android', price: 'подписка, 7 дней free' },
+      { name: 'BeFreed', unit: 'AI-аудиоурок', synth: '● несколько источников в эпизоде', cite: '◐ не на уровне глав', audio: '● подкаст-формат', tutor: '◐ AI-чат', platform: 'мобильное приложение', price: 'freemium' },
+      { name: 'NotebookLM', unit: 'ваши загруженные файлы', synth: '● только по вашим файлам', cite: '● цитаты', audio: '● Audio Overview', tutor: '● Interactive mode, EN', platform: 'web + mobile', price: 'бесплатно / Plus' },
+      { name: 'Throughline', unit: 'тема-программа на 21 день', synth: '● 5–10 книг в одной программе', cite: '● книга · автор · глава', audio: '● основа продукта', tutor: '● голосом', platform: 'web: телефон и десктоп', price: '[ВАША ЦЕНА]', bg: '#EEEBFF', nameColor: '#3A22D6' }
+    ].map(r => Object.assign({}, base, r));
+    return { rows };
+  }
+}
+</script>
+</body>
+</html>

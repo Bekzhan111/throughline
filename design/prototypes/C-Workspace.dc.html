@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lesson workspace with voice tutor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#4A2FE0}a:hover{color:#3218B8}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100vh; background: #EEF0F4; color: #15131F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: flex; flex-direction: column">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #DEE1E8">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+      <div style="font-weight: 800; font-size: 19px; letter-spacing: -0.02em">throughline<span style="color: {{accent}}">.</span></div>
+      <div style="font-size: 14px; color: #4D4A5C">Personal Finance · Week 2</div>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 10px">
+        <div style="font-size: 13px; color: #4D4A5C">Day 9 of 21</div>
+        <div style="width: 120px; height: 6px; border-radius: 3px; background: #DEE1E8; overflow: hidden"><div style="width: 43%; height: 100%; background: {{accent}}"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <div style="flex: 1; max-width: 1360px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+    <nav aria-label="Program outline" style="flex: 1 1 200px; max-width: 240px; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #4D4A5C; padding: 0 10px 8px">WEEK 2 · BUILD THE SYSTEM</div>
+      <sc-for list="{{outline}}" as="o" hint-placeholder-count="7">
+        <a href="#" style="display: flex; gap: 10px; align-items: center; min-height: 44px; padding: 0 10px; border-radius: 10px; text-decoration: none; background: {{o.bg}}; color: {{o.fg}}; font-size: 14px; font-weight: {{o.w}}">
+          <span style="width: 22px; font-size: 12px; color: {{o.num}}">{{o.d}}</span><span>{{o.t}}</span>
+        </a>
+      </sc-for>
+    </nav>
+
+    <main style="flex: 999 1 480px; min-width: 0; background: #FFFFFF; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; background: #EFEBFF; color: #3218B8">The Total Money Makeover · Ramsey · § Debt Snowball</span>
+        <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; background: #EFEBFF; color: #3218B8">The Psychology of Money · Housel · Ch. 11</span>
+        <span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 6px; background: #EFEBFF; color: #3218B8">I Will Teach You to Be Rich · Sethi · Ch. 1</span>
+      </div>
+      <h1 style="margin: 0; font-size: 34px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">Killing debt: snowball vs. avalanche</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #2E2B3A">There are two popular ways to order your debts. The <strong>avalanche</strong> pays the highest interest rate first — on paper, it costs you the least. The <strong>snowball</strong> pays the smallest balance first, so you close accounts quickly and feel progress early.</p>
+
+      <section style="background: #FFF6CC; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #6B5300">WHERE THE BOOKS DISAGREE</div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+            <div style="font-size: 13px; font-weight: 700; color: #4D4A5C">Ramsey</div>
+            <div style="font-size: 15px; line-height: 1.5">Quick wins keep you motivated, and motivation is what actually gets debt paid.</div>
+          </div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+            <div style="font-size: 13px; font-weight: 700; color: #4D4A5C">The math view</div>
+            <div style="font-size: 15px; line-height: 1.5">Every month on a high-rate card costs more. Rate first is cheaper over time.</div>
+          </div>
+        </div>
+        <div style="font-size: 15px; line-height: 1.55; color: #3D3420"><strong>Tie-breaker from Housel:</strong> a plan you can stick with beats a perfect plan you abandon.</div>
+      </section>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-top: 6px; border-top: 1px solid #ECEEF2">
+        <button type="button" aria-label="Play lesson audio" style="width: 52px; height: 52px; border-radius: 50%; border: none; background: {{accent}}; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 4.5v15l12-7.5z"/></svg>
+        </button>
+        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 6px">
+          <div style="height: 5px; border-radius: 3px; background: #ECEEF2; overflow: hidden"><div style="width: 22%; height: 100%; background: {{accent}}"></div></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: #4D4A5C"><span>2:51 · text follows audio</span><span>13:05</span></div>
+        </div>
+        <button type="button" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #D3D6DE; background: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; color: #15131F; cursor: pointer">1.0×</button>
+      </div>
+    </main>
+
+    <aside style="flex: 1 1 300px; max-width: 380px; min-width: 0; background: #15131F; color: #F5F4FA; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <h2 style="margin: 0; font-size: 17px; font-weight: 700">Voice tutor</h2>
+        <span style="font-size: 12px; padding: 4px 8px; border-radius: 6px; background: #2A2638; color: #CFCBE0">Lesson paused</span>
+      </div>
+      <div style="background: #2A2638; border-radius: 14px 14px 14px 4px; padding: 12px 14px; font-size: 14px; line-height: 1.55">You mentioned two cards: $900 at 24% and $4,100 at 19%. Want me to walk through which method fits you?</div>
+      <div style="align-self: flex-end; background: {{accent}}; color: #FFFFFF; border-radius: 14px 14px 4px 14px; padding: 12px 14px; font-size: 14px; line-height: 1.55; max-width: 85%">Yes, but I always quit budgets after a month.</div>
+      <div style="background: #2A2638; border-radius: 14px 14px 14px 4px; padding: 12px 14px; font-size: 14px; line-height: 1.55">Then the small card first is a good bet here — it's also the higher rate, so both methods agree. You'd clear it in about 3 months.</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <button type="button" style="min-height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid #3E3950; background: transparent; color: #E4E1EF; font: inherit; font-size: 13px; cursor: pointer">Quiz me</button>
+        <button type="button" style="min-height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid #3E3950; background: transparent; color: #E4E1EF; font: inherit; font-size: 13px; cursor: pointer">Explain simpler</button>
+        <button type="button" style="min-height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid #3E3950; background: transparent; color: #E4E1EF; font: inherit; font-size: 13px; cursor: pointer">Show the source</button>
+      </div>
+      <button type="button" style="margin-top: 4px; height: 52px; border-radius: 26px; border: none; background: #F5F4FA; color: #15131F; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15131F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Talk to tutor
+      </button>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#5B3DF5","options":["#5B3DF5","#0F7A5C","#C2410C","#1D3FD6"]},"$preview":{"width":1280,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#5B3DF5';
+    const outline = [
+      { d: '07', t: 'Pay yourself first', s: 'done' },
+      { d: '08', t: 'Emergency fund', s: 'done' },
+      { d: '09', t: 'Snowball vs. avalanche', s: 'now' },
+      { d: '10', t: 'Credit scores', s: 'next' },
+      { d: '11', t: 'A budget that runs itself', s: 'next' },
+      { d: '12', t: 'Negotiating bills', s: 'next' },
+      { d: '13', t: 'Week 2 voice review', s: 'next' }
+    ].map(o => Object.assign(o, o.s === 'now'
+      ? { bg: '#FFFFFF', fg: '#15131F', w: 700, num: accent }
+      : { bg: 'transparent', fg: o.s === 'done' ? '#4D4A5C' : '#15131F', w: 500, num: '#4D4A5C' }));
+    return { accent, outline };
+  }
+}
+</script>
+</body>
+</html>
