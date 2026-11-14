@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Throughline — finish changes, not books</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C6F432}a:hover{color:#E2FF8A}
+</style>
+</helmet>
+<div style="min-height: 1640px; background: #0B0B10; color: #F4F4F6; font-family: Inter, system-ui, sans-serif">
+  <header style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; flex: 1">Throughline</div>
+    <a href="#programs" style="color: #D6D6E0; text-decoration: none; font-size: 15px; padding: 12px 4px">Programs</a>
+    <a href="#pricing" style="color: #D6D6E0; text-decoration: none; font-size: 15px; padding: 12px 4px">Pricing</a>
+    <a href="D-Today.dc.html" style="height: 44px; padding: 0 18px; border-radius: 22px; background: #C6F432; color: #0B0B10; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center">Start free</a>
+  </header>
+
+  <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+    <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #C6F432">BOOK-BACKED PLANS FOR REAL ADULT PROBLEMS</div>
+      <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 64px; line-height: 1.0; font-weight: 700">Don't finish books.<br>Finish changes.</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #C9C9D6; max-width: 560px">Pick a problem, like building an emergency fund or asking for a raise. Get 21 days of 12-minute audio lessons drawn from the best books on it, one small action a day, and a tutor who checks in by voice.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <a href="D-Today.dc.html" style="height: 52px; padding: 0 24px; border-radius: 26px; background: #C6F432; color: #0B0B10; font-size: 16px; font-weight: 700; text-decoration: none; display: flex; align-items: center">Try Day 1 free</a>
+        <span style="font-size: 14px; color: #A3A3B2">No card needed. Works in your browser.</span>
+      </div>
+    </div>
+    <div style="flex: 1 1 380px; min-width: 0; background: #17171F; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #A3A3B2">WHAT OTHERS COUNT vs WHAT WE COUNT</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+        <div style="background: #22222E; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 4px">
+          <div style="font-size: 13px; color: #A3A3B2">Summary apps</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: #8A8A9A">84 min</div>
+          <div style="font-size: 13px; color: #A3A3B2">listened</div>
+        </div>
+        <div style="background: #C6F432; color: #0B0B10; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 4px">
+          <div style="font-size: 13px; font-weight: 600">Throughline</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">$300</div>
+          <div style="font-size: 13px">actually saved</div>
+        </div>
+      </div>
+      <div style="font-size: 14px; line-height: 1.5; color: #C9C9D6">Every lesson names the book and chapter each idea came from, so you can check it or go deeper.</div>
+    </div>
+  </section>
+
+  <section style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 40px; display: flex; flex-direction: column; gap: 20px">
+    <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px">How a day works</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+        <div style="border: 1px solid #2A2A3A; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: baseline; gap: 10px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #C6F432">{{s.n}}</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700">{{s.title}}</div>
+          </div>
+          <div style="font-size: 13px; font-weight: 600; color: #A3A3B2">{{s.when}}</div>
+          <div style="font-size: 15px; line-height: 1.5; color: #D6D6E0">{{s.body}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="programs" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 40px; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px">Pick a problem, not a book</h2>
+      <div style="font-size: 14px; color: #A3A3B2">Each program: 21 days · 5–10 books · one outcome</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+      <sc-for list="{{programs}}" as="p" hint-placeholder-count="6">
+        <a href="D-Program.dc.html" style="background: #17171F; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #F4F4F6">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: {{p.c}}">{{p.area}}</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 700; line-height: 1.2">{{p.title}}</div>
+          <div style="font-size: 14px; color: #A3A3B2">Finish line: {{p.goal}}</div>
+          <div style="font-size: 13px; color: #8A8A9A">{{p.books}}</div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 64px; display: flex; flex-wrap: wrap; gap: 24px">
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px">Pricing you won't have to fight</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #C9C9D6">The #1 complaint about learning apps isn't the content. It's surprise charges and cancel mazes. So we promise:</p>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <sc-for list="{{promises}}" as="pr" hint-placeholder-count="3">
+          <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.45">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F432" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px"><path d="M5 12l5 5 9-10"/></svg>
+            <span>{{pr}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="flex: 1 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px">
+      <div style="border: 1px solid #2A2A3A; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 15px; font-weight: 600">Free</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700">$0</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #C9C9D6">Day 1 of every program, with its action and check-in.</div>
+        <a href="D-Today.dc.html" style="margin-top: auto; height: 48px; border-radius: 24px; border: 1px solid #C6F432; color: #C6F432; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">Start free</a>
+      </div>
+      <div style="background: #F4F4F6; color: #0B0B10; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 15px; font-weight: 600">Premium</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700">$12.99<span style="font-size: 16px; font-weight: 500">/mo</span></div>
+        <div style="font-size: 14px; color: #33333D">or $79.99/year</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #33333D">All programs, all audio, document upload, 60 tutor minutes a month.</div>
+        <a href="D-Today.dc.html" style="margin-top: auto; height: 48px; border-radius: 24px; background: #0B0B10; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center">Go Premium</a>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1640}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const steps = [
+      { n: '01', title: 'Listen', when: 'On your commute · 12 min', body: 'One episode, no playlist. Ideas from several books on today\'s question, each tagged with book and chapter. Interrupt the host any time to ask why.' },
+      { n: '02', title: 'Do', when: 'During the day · ~5 min', body: 'Every lesson ends with one concrete action: set the transfer, send the email, write the script. Small enough to do today.' },
+      { n: '03', title: 'Check in', when: 'Evening · 60 sec by voice', body: 'Tell the tutor how it went. Stuck? It helps on the spot. Tomorrow\'s lesson changes to fit what really happened.' }
+    ];
+    const programs = [
+      { area: 'MONEY', c: '#C6F432', title: 'A $1,000 emergency fund in 21 days', goal: '$1,000 in a separate account', books: 'Sethi, Housel, Ramsey, Clear +1' },
+      { area: 'CAREER', c: '#7DD3FC', title: 'Ask for a raise in 3 weeks', goal: 'the meeting is booked and done', books: 'Voss, Fisher & Ury, Grant +3' },
+      { area: 'FAMILY', c: '#F9A8D4', title: 'Calmer mornings with kids', goal: '5 school mornings without yelling', books: 'Faber & Mazlish, Siegel & Bryson +3' },
+      { area: 'HEALTH', c: '#FDBA74', title: 'Fix your sleep schedule', goal: '7 nights in your target window', books: 'Walker, Dement, Clear +2' },
+      { area: 'MONEY', c: '#C6F432', title: 'Get out of credit card debt: a plan', goal: 'a payoff date you can see', books: 'Ramsey, Sethi, Housel +2' },
+      { area: 'FOCUS', c: '#7DD3FC', title: 'Take back 1 hour a day from your phone', goal: 'screen time down 60 min', books: 'Newport, Eyal, Clear +2' }
+    ];
+    const promises = [
+      'A reminder 3 days before any charge, every time.',
+      'Cancel in one click on the web. No email, no survey, no maze.',
+      'No free trial that quietly turns into an annual bill.'
+    ];
+    return { steps, programs, promises };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Today: listen → one action</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C6F432}a:hover{color:#E2FF8A}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #0B0B10; color: #F4F4F6; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <div style="padding: 22px 20px 0; display: flex; justify-content: space-between; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <div style="font-size: 14px; color: #A3A3B2">Morning, Jordan · Day 7 of 21</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 700">$1,000 emergency fund</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: {{accent}}">$300</div>
+      <div style="font-size: 12px; color: #A3A3B2">saved so far</div>
+    </div>
+  </div>
+
+  <div style="margin: 16px 20px 0; border-radius: 20px; background: #17171F; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: {{accent}}">TODAY'S ONE EPISODE</div>
+      <div style="font-size: 12px; color: #A3A3B2">fits your drive</div>
+    </div>
+    <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 27px; line-height: 1.12">Make saving automatic, so willpower isn't needed</h1>
+    <div style="display: flex; gap: 8px" role="group" aria-label="Episode length">
+      <button type="button" onClick="{{pick12}}" aria-pressed="{{p12}}" style="height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid {{b12}}; background: {{bg12}}; color: {{fg12}}; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">12 min</button>
+      <button type="button" onClick="{{pick20}}" aria-pressed="{{p20}}" style="height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid {{b20}}; background: {{bg20}}; color: {{fg20}}; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">20 min</button>
+      <button type="button" onClick="{{pick35}}" aria-pressed="{{p35}}" style="height: 36px; padding: 0 12px; border-radius: 18px; border: 1px solid {{b35}}; background: {{bg35}}; color: {{fg35}}; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer">35 min deep</button>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px">
+      <button type="button" onClick="{{toggle}}" aria-label="{{playLabel}}" style="width: 60px; height: 60px; border-radius: 50%; border: none; background: {{accent}}; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+        <sc-if value="{{playing}}" hint-placeholder-val="{{ false }}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0B0B10" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        </sc-if>
+        <sc-if value="{{paused}}" hint-placeholder-val="{{ true }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#0B0B10" aria-hidden="true"><path d="M8 4.5v15l12-7.5z"/></svg>
+        </sc-if>
+      </button>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+        <div style="height: 4px; background: #2A2A36; border-radius: 2px; overflow: hidden"><div style="width: 22%; height: 100%; background: {{accent}}"></div></div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #A3A3B2"><span>{{elapsed}}</span><span>{{total}}</span></div>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px">
+      <span style="font-size: 12px; padding: 5px 8px; border-radius: 6px; background: #22222E; color: #D6D6E0">Sethi · Ch. 6</span>
+      <span style="font-size: 12px; padding: 5px 8px; border-radius: 6px; background: #22222E; color: #D6D6E0">Clear · Ch. 12</span>
+      <span style="font-size: 12px; padding: 5px 8px; border-radius: 6px; background: #22222E; color: #D6D6E0">Housel · Ch. 10</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #A3A3B2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A3A3B2" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+      Say “wait, why?” any time to interrupt the host
+    </div>
+  </div>
+
+  <div style="margin: 12px 20px 0; border-radius: 20px; background: #F4F4F6; color: #0B0B10; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #4A4A57">YOUR ONE ACTION TODAY</div>
+      <div style="font-size: 12px; font-weight: 700; padding: 4px 8px; border-radius: 6px; background: {{statusBg}}; color: {{statusFg}}">{{statusLabel}}</div>
+    </div>
+    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2">Set a $50 auto-transfer to savings for every payday</div>
+    <div style="font-size: 13px; color: #4A4A57">About 5 minutes in your bank app. We'll check in tonight.</div>
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px">
+      <button type="button" onClick="{{markDone}}" style="height: 44px; border-radius: 12px; border: none; background: #0B0B10; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Done it</button>
+      <button type="button" onClick="{{markStuck}}" style="height: 44px; border-radius: 12px; border: 1px solid #C9C9D3; background: transparent; color: #0B0B10; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">I'm stuck</button>
+      <button type="button" onClick="{{markLater}}" style="height: 44px; border-radius: 12px; border: 1px solid #C9C9D3; background: transparent; color: #0B0B10; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Tonight</button>
+    </div>
+  </div>
+
+  <div style="margin: 12px 20px 0; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: #17171F">
+    <div style="display: flex; gap: 4px" aria-hidden="true">
+      <sc-for list="{{week}}" as="d" hint-placeholder-count="7">
+        <div style="width: 14px; height: 14px; border-radius: 4px; background: {{d.c}}"></div>
+      </sc-for>
+    </div>
+    <div style="flex: 1; font-size: 13px; color: #D6D6E0"><b style="color: #F4F4F6">{{streak}}-day action streak</b> · counts what you did, not what you heard</div>
+  </div>
+
+  <nav style="margin-top: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #1F1F2A; padding: 8px 8px 18px">
+    <a href="D-Today.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0; text-decoration: none; color: {{accent}}; font-size: 12px; font-weight: 600">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>Today
+    </a>
+    <a href="D-Program.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0; text-decoration: none; color: #A3A3B2; font-size: 12px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Program
+    </a>
+    <a href="D-Program.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0; text-decoration: none; color: #A3A3B2; font-size: 12px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Ledger
+    </a>
+    <a href="D-Checkin.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0; text-decoration: none; color: #A3A3B2; font-size: 12px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Check-in
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6F432","options":["#C6F432","#7DD3FC","#FDBA74","#F9A8D4"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { playing: false, len: 12, status: 'todo' }; }
+  renderVals() {
+    const accent = this.props.accent ?? '#C6F432';
+    const { playing, len, status } = this.state;
+    const chip = (n) => {
+      const on = len === n;
+      return { p: on ? 'true' : 'false', b: on ? accent : '#34344A', bg: on ? accent : 'transparent', fg: on ? '#0B0B10' : '#F4F4F6' };
+    };
+    const c12 = chip(12), c20 = chip(20), c35 = chip(35);
+    const statuses = {
+      todo: { l: 'To do', bg: '#E3E3EA', fg: '#33333D' },
+      done: { l: 'Done ✓', bg: '#C6F432', fg: '#0B0B10' },
+      stuck: { l: 'Tutor will help', bg: '#FDBA74', fg: '#0B0B10' },
+      later: { l: 'Reminder 8 PM', bg: '#7DD3FC', fg: '#0B0B10' }
+    };
+    const s = statuses[status];
+    const done = status === 'done';
+    const pattern = [1, 1, 0, 1, 1, 1, done ? 1 : 2];
+    const week = pattern.map(v => ({ c: v === 1 ? accent : (v === 2 ? '#34344A' : '#5A2A2A') }));
+    const totals = { 12: '12:06', 20: '20:14', 35: '35:40' };
+    return {
+      accent, playing, paused: !playing,
+      playLabel: playing ? 'Pause' : 'Play',
+      elapsed: '2:41', total: totals[len],
+      p12: c12.p, b12: c12.b, bg12: c12.bg, fg12: c12.fg,
+      p20: c20.p, b20: c20.b, bg20: c20.bg, fg20: c20.fg,
+      p35: c35.p, b35: c35.b, bg35: c35.bg, fg35: c35.fg,
+      pick12: () => this.setState({ len: 12 }),
+      pick20: () => this.setState({ len: 20 }),
+      pick35: () => this.setState({ len: 35 }),
+      toggle: () => this.setState({ playing: !playing }),
+      statusLabel: s.l, statusBg: s.bg, statusFg: s.fg,
+      markDone: () => this.setState({ status: 'done' }),
+      markStuck: () => this.setState({ status: 'stuck' }),
+      markLater: () => this.setState({ status: 'later' }),
+      week, streak: done ? 4 : 3
+    };
+  }
+}
+</script>
+</body>
+</html>
