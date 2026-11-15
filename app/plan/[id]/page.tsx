@@ -42,7 +42,7 @@ export default function PlanPage() {
   if (error || !plan || !mine) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{error || "Loading your plan…"}</p>
           {error && (
@@ -68,7 +68,7 @@ export default function PlanPage() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="program-grid">
           <div className="program-main">

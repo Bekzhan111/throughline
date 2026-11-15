@@ -22,8 +22,8 @@ function Pricing() {
   }, []);
 
   return (
-    <>
-      <SiteHeader cta={false} />
+    <div className="landing">
+      <SiteHeader />
       <main className="shell plan-page">
         <div className="kicker">PLANS</div>
         <h1 className="page-title">Free, or Pro.</h1>
@@ -34,7 +34,7 @@ function Pricing() {
           <p className="lede">Loading plans…</p>
         )}
       </main>
-    </>
+    </div>
   );
 }
 
@@ -42,12 +42,12 @@ export default function PricingPage() {
   return (
     <Suspense
       fallback={
-        <>
-          <SiteHeader cta={false} />
+        <div className="landing">
+          <SiteHeader />
           <main className="shell">
             <p className="lede">Loading plans…</p>
           </main>
-        </>
+        </div>
       }
     >
       <Pricing />

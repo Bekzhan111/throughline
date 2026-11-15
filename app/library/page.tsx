@@ -15,12 +15,12 @@ export default async function LibraryPage() {
 
   if (!course) {
     return (
-      <>
+      <div className="landing">
         <SiteHeader />
         <main className="shell">
           <p className="lede">The library could not be loaded. Reload the page to try again.</p>
         </main>
-      </>
+      </div>
     );
   }
 
@@ -31,7 +31,7 @@ export default async function LibraryPage() {
   const ideas = Object.values(course.ideas);
 
   return (
-    <>
+    <div className="landing">
       <SiteHeader />
       <main className="shell">
         <div className="kicker">LIBRARY</div>
@@ -88,6 +88,6 @@ export default async function LibraryPage() {
           })}
         </div>
       </main>
-    </>
+    </div>
   );
 }

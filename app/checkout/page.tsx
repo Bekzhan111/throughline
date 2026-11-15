@@ -74,7 +74,7 @@ function Checkout() {
   if (!interval || !ready) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">Loading checkout…</p>
         </main>
@@ -84,7 +84,7 @@ function Checkout() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="auth-wrap">
         <form className="card auth-card" onSubmit={submit}>
           <span className="tag tone-gold">Test mode</span>
@@ -161,7 +161,7 @@ export default function CheckoutPage() {
     <Suspense
       fallback={
         <>
-          <SiteHeader cta={false} />
+          <SiteHeader />
           <main className="shell">
             <p className="lede">Loading checkout…</p>
           </main>

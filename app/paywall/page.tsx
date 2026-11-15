@@ -36,7 +36,7 @@ function Paywall() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell plan-page">
         <div className="kicker">PAYWALL</div>
         <h1 className="page-title">Pick Free or Pro to continue.</h1>
@@ -56,7 +56,7 @@ export default function PaywallPage() {
     <Suspense
       fallback={
         <>
-          <SiteHeader cta={false} />
+          <SiteHeader />
           <main className="shell">
             <p className="lede">Loading plans…</p>
           </main>

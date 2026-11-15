@@ -90,7 +90,7 @@ function LessonScreen({ planId, position }: { planId: string; position: number }
   if (error || !plan || !lesson) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{error || "Loading the lesson…"}</p>
           {(error || plan) && (
@@ -187,7 +187,7 @@ function LessonScreen({ planId, position }: { planId: string; position: number }
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="lesson-top">
           <Link className="back" href={`/plan/${plan.id}`}>

@@ -1684,6 +1684,62 @@ body:has(.landing) {
   color: #ffffff;
 }
 
+.landing .nav-link[aria-current="page"] {
+  background: rgba(59, 108, 246, 0.22);
+  color: #dbe4ff;
+}
+
+.landing .who {
+  color: #c5cbe0;
+}
+
+.landing .signout {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #f4f6fb;
+}
+
+.landing .signout:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+}
+
+.landing .page-title {
+  color: #ffffff;
+}
+
+.landing .kicker,
+.landing .lede,
+.landing .page-lede {
+  color: #c5cbe0;
+}
+
+.landing .plan-card,
+.landing .book-card {
+  color: #f4f6fb;
+  background: #161a27;
+  border-color: #2c3348;
+  box-shadow: 0 6px 0 #090b12;
+}
+
+.landing .plan-card.featured {
+  border-color: var(--purple);
+  box-shadow: 0 6px 0 var(--purple-dark);
+}
+
+.landing .plan-card .kicker {
+  color: #c4b5fd;
+}
+
+.landing .plan-price span,
+.landing .plan-note,
+.landing .plan-or,
+.landing .book-head span,
+.landing .note p,
+.landing .note-days span {
+  color: #c5cbe0;
+}
+
 .landing .hero {
   min-height: calc(100vh - 66px);
 }

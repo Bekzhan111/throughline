@@ -56,7 +56,7 @@ export default function StartPage() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell start-grid">
         <section>
           <div className="kicker">STEP 1 OF 2</div>

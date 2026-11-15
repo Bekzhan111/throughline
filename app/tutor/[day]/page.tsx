@@ -102,7 +102,7 @@ function TutorScreen({ day }: { day: number }) {
   if (loadError || !course || !lesson) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{loadError || (course ? "That day is not in the program." : "Loading the check-in…")}</p>
           {(loadError || course) && (
@@ -180,7 +180,7 @@ function TutorScreen({ day }: { day: number }) {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="lesson-top">
           <Link className="back" href={`/lesson/${day}`}>

@@ -107,7 +107,7 @@ function TutorScreen({ planId, position }: { planId: string; position: number })
   if (loadError || !plan || !lesson) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{loadError || "Loading the check-in…"}</p>
           {(loadError || plan) && (
@@ -185,7 +185,7 @@ function TutorScreen({ planId, position }: { planId: string; position: number })
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="lesson-top">
           <Link className="back" href={`/plan/${plan.id}/lesson/${position}`}>

@@ -64,7 +64,7 @@ export default function ProgramsPage() {
   if (error || !course || !mine) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{error || "Loading your programs…"}</p>
         </main>
@@ -107,7 +107,7 @@ export default function ProgramsPage() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="programs-head">
           <div>

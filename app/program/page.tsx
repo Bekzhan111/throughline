@@ -61,7 +61,7 @@ export default function ProgramPage() {
   if (error || !course || !mine) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{error || "Loading your program…"}</p>
         </main>
@@ -100,7 +100,7 @@ export default function ProgramPage() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="program-grid">
           <div className="program-main">

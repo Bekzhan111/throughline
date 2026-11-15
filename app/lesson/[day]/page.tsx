@@ -115,7 +115,7 @@ function LessonScreen({ day }: { day: number }) {
   if (error || !course || !lesson) {
     return (
       <>
-        <SiteHeader cta={false} />
+        <SiteHeader />
         <main className="shell">
           <p className="lede">{error || (course ? "That day is not in the program." : "Loading the lesson…")}</p>
           {(error || course) && (
@@ -216,7 +216,7 @@ function LessonScreen({ day }: { day: number }) {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell">
         <div className="lesson-top">
           <Link className="back" href="/program">

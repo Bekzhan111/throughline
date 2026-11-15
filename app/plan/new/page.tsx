@@ -50,7 +50,7 @@ export default function NewPlanPage() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="shell start-grid">
         <section>
           <div className="kicker">YOUR DOCUMENT</div>

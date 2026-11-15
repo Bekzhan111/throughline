@@ -52,7 +52,7 @@ function LoginForm() {
 
   return (
     <>
-      <SiteHeader cta={false} />
+      <SiteHeader />
       <main className="auth-wrap">
         <form className="card auth-card" onSubmit={submit}>
           <span className={`tile big ${mode === "up" ? "tone-green" : "tone-blue"}`}>
